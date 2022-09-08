@@ -1,0 +1,58 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #212831;
+}
+
+.container {
+  margin: 10px;
+  color: white;
+}
+
+
+/* first we will design our default input */
+.container input {
+    appearance: none;
+    /* appearance-none to
+    reset any browser specific styling on an element. */
+    width: 48px;
+    height: 27px;
+    border: 2px solid #ff0000;
+    border-radius: 20px;
+    background: #f1e1e1;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+   }
+/* then lets style the circle */
+   .container input::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: rgba(234, 7, 7, 0.5);
+    border: 2px solid #ea0707;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2px;
+    transition: all 0.3s ease-in-out;
+   }
+
+   /* if we check the input  border color will change */
+
+   .container input:checked {
+    border: 2px solid #02c202;
+    background: #e2f1e1;
+   }
+
+   /* and of course we will style the circle after checked input */
+   .container input:checked::before {
+    background: rgba(2, 194, 2, 0.5);
+    border: 2px solid #02c202;
+    transform: translateX(120%);
+    transition: all 0.3s ease-in-out;
+   }

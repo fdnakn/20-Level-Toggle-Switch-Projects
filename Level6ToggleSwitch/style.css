@@ -1,0 +1,59 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #212831;
+  }
+  /* our container */
+  .switch {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+  }
+  /* lets hide our default input */
+  .switch input {
+    display: none;
+  }
+  /* let style our custom slider */
+  .slider {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 25px;
+    border-radius: 30px;
+    box-shadow: 0 0 0 2px #ccc, 0 0 4px #ccc;
+    cursor: pointer;
+    border: 4px solid transparent;
+    overflow: hidden;
+    transition: 0.2s;
+    color: white;
+  }
+  /* and lets style our circle with before selector */
+  .slider:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: 0.2s;
+    transform: translateX(-55px);
+    /* i will take it to left when i checked 
+    the input it will go right very fast */
+  }
+  /* when the input checked the circle will swipe to right */
+  input:checked + .slider:before {
+    transform: translateX(50px);
+    background-color: #00adb5;
+  }
+  
+  /* and we will add some boxshadow our slider
+   when the input checked */
+  input:checked + .slider {
+    box-shadow: 0 0 0 2px #00adb5, 0 0 8px #00adb5;
+  }
+  

@@ -1,0 +1,72 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #212831;
+}
+/* our container */
+.switch {
+  width: 60px;
+  height: 30px;
+  position: relative;
+  display: inline-block;
+}
+/* lets hide our default input */
+.switch input {
+  display: none;
+}
+/* let style our custom slider */
+.slider {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 25px;
+  border-radius: 30px;
+  box-shadow: 0 0 0 2px #ccc, 0 0 4px #ccc;
+  cursor: pointer;
+  border: 4px solid transparent;
+  overflow: hidden;
+  transition: 0.2s;
+  color: white;
+}
+/* and lets style our circle with before selector */
+.slider:before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: 0.2s;
+  transform: translateX(-82px);
+}
+/* when the input checked the circle will swipe to right */
+input:checked + .slider:before {
+  transform: translateX(50px);
+  background-color: limeGreen;
+}
+
+/* and we will add some boxshadow our slider
+ when the input checked */
+input:checked + .slider {
+  box-shadow: 0 0 0 2px limeGreen, 0 0 8px limeGreen;
+}
+
+/* and we will add text with after pseudo selector */
+
+.slider:after{
+    position: absolute;
+    content: "Click me";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input:checked + .slider:after{
+    content: "";
+}

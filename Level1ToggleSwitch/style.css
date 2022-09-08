@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #212831;
+}
+/* now we will style the swith container of the slider*/
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  cursor: pointer;
+}
+/* now friends we will style our custom slider after that we will
+hide the default input*/
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+/* lets hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* now guys we will design our circle in the slider
+we will do it with before pseudo selector */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  border-radius: 20px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.3s;
+}
+/* now we will change the backgorund color
+of our slider when the input checked */
+input:checked + .slider {
+/* + means  Selects the first .slider element or class
+ that is placed immediately after input:checked elements */
+  background-color: rgb(0, 221, 80);
+}
+
+/*also we need to swipt right
+our pseudo slector when the input checked */
+input:checked + .slider:before {
+  transform: translateX(24px);
+}

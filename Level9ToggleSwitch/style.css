@@ -1,0 +1,61 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #212831;
+}
+/* lets style the container first */
+.switch {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 32px;
+}
+
+/* then  Hide default input */
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  /* The inset property takes
+  the same values as the left property. */
+  background-color: #eee;
+  transition: 0.4s;
+  border-radius: 8px;
+  box-shadow: 0 3px #dfd9d9;
+}
+/* and we will style the button insede of the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 23px;
+  border-radius: 5px;
+  left: 5px;
+  bottom: 7px;
+  background-color: lightsalmon;
+  transition: 0.4s;
+  box-shadow: 0 5px #bcb4b4;
+  /* one of x axis one of y axis */
+}
+
+/* when hovered shadow of y axix will decreace 
+and the element a little bit decrease */
+.slider:hover::before {
+  box-shadow: 0 2.5px #bcb4b4;
+  bottom: 5px;
+}
+
+/* and when checked it will go right*/
+
+input:checked + .slider:before {
+  transform: translateX(32px);
+  background: lightgreen;
+}
