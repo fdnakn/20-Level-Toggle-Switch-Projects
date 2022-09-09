@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #212831;
+}
+/* first we will desgin the container */
+.container {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  cursor: pointer;
+}
+/* then we will hide the input default input */
+.container input {
+  display: none;
+}
+/* lets style our custom slider */
+.slider {
+  display: block;
+  font-size: 10px;
+  position: relative;
+  width: 50px;
+  height: 20px;
+  background-color: #fff;
+}
+/* and lets stlye the circle inside of the slider */
+.slider::after {
+  content: "OFF";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+/* when input checked it will go right and it will rotate 360deg
+and its content and background color will change */
+input:checked + .slider::after {
+  content: "ON";
+  background-color: limegreen;
+  transform: translateX(25px) rotate(360deg);
+}

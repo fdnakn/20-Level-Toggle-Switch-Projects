@@ -1,0 +1,57 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #212831;
+}
+
+/* as always i do lets start with the container */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 32px;
+}
+
+/*and lets Hide default input */
+.switch input {
+  display: none;
+}
+/* and we need to style The slider our custom slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 3px solid #ccc;
+  transition: 0.4s;
+}
+/* we will design our squre insede of the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 1px;
+  bottom: 2.5px;
+  background-color: #ccc;
+  transition: 0.4s;
+  box-shadow: 0 0 2px 0px #ccc;
+}
+/* when checked slider's background will change */
+
+input:checked + .slider {
+  background-color: #00adb5;
+}
+/* and also when checked the squre will go to right */
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}

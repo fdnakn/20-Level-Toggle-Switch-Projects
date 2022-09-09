@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #212831;
+}
+/* first we will design our container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 24px;
+}
+/* then i will hide the default input */
+.switch input {
+  display: none;
+}
+/*lets style the our custom The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 16px 66px 16px;
+  /* (first value applies to top-left corner,
+    second value applies to top-right and bottom-left corners,
+    and third value applies to bottom-right corner): */
+}
+
+/* we will design the element insede of the slider */
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 16px 66px 16px;
+  border: 2px solid #ccc;
+}
+
+/* when checked slider backgorund color will change */
+input:checked + .slider {
+  background-color: #00adb5;
+}
+/* when checked elemet will go right 
+and we will ad box shadow and border*/
+
+input:checked + .slider:before {
+  transform: translateX(32px);
+  background-color: limegreen;
+  box-shadow: 0px 0px 40px 5px #00adb5;
+  border: 2px solid white;
+}
+/* and we will add a line in the element with after */
+input:checked + .slider::after {
+  content: "|";
+  color: white;
+  position: absolute;
+  right: 12px;
+  top: 2px;
+  transform: rotate(-42deg);
+}

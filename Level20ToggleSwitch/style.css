@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #212831;
+  }
+  /* now we will style the swith container of the slider*/
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+  }
+  /* now friends we will style our custom slider after that we will
+  hide the default input*/
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 30px;
+    transform: rotate(90deg);
+  }
+  /* lets hide the default checkbox */
+  .switch input {
+   display: none;
+  }
+  /* now guys we will design our circle in the slider
+  we will do it with before pseudo selector */
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    left: 5px;
+    bottom: 5px;
+    background-color: white;
+    transition: .3s;
+  }
+  /* now we will change the backgorund color
+  of our slider when the input checked */
+  input:checked + .slider {
+  /* + means  Selects the first .slider element or class
+   that is placed immediately after input:checked elements */
+    background-color: rgb(0, 221, 80);
+  }
+  
+  /*also we need to swipt right
+  our pseudo slector when the input checked */
+  input:checked + .slider:before {
+    transform: translateX(21px);
+    animation: dance .9s;
+  }
+
+  @keyframes dance{
+    0%   {background-color: red;}
+    10%  {background-color: yellow;}
+    20%  {background-color: blue;}
+    30% {background-color: green;}
+    40%  {background-color: pink;}
+    50%  {background-color: purple;}
+    60%  {background-color: red;}
+    70%  {background-color: yellow;}
+    80% {background-color: limegreen;}
+    90%  {background-color: blue;}
+    100%  {background-color: purple;}
+  }
+  

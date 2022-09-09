@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #dae2b6;
+}
+/* first we will style our container */
+.switch {
+  position: relative;
+  width: 55px;
+  height: 15px;
+}
+/* then lets hide the default input */
+.switch input {
+  display: none;
+}
+/* now we will style the our custom slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+/* circle in the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0px;
+  bottom: -5px;
+  background-color: red;
+  transition: 0.4s;
+  box-sizing: border-box;
+  border: 10px solid white;
+  /* with 10 px border it will looks like a red ripple in a circle */
+  border-radius: 50%;
+}
+/* when checked slider backgroudn will change */
+input:checked + .slider {
+  background-color: #06a606;
+}
+
+/* when checked circle will go right and its color will change */
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background: limegreen;
+}
